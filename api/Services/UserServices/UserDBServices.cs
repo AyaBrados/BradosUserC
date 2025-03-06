@@ -122,7 +122,7 @@ namespace BaseProjectApi.Services.UserServices
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    using (SqlCommand command = new SqlCommand("dbo.GetSomeOtherSPHereIFyoucan", connection))
+                    using (SqlCommand command = new SqlCommand("dbo.GetUserByUserId", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserId", UserId); // Ensure this matches the stored procedure parameter
@@ -153,7 +153,7 @@ namespace BaseProjectApi.Services.UserServices
 
                 _result.Code = 200;
                 _result.Status = true;
-                _result.Message = "GetSingleUser() User retrieved successfully"; // Adjust message as needed
+                _result.Message = "User Logged In successfully"; // Adjust message as needed
 
             }
             catch (Exception ex)
@@ -320,7 +320,7 @@ namespace BaseProjectApi.Services.UserServices
                 /* The rest stored procedures here we are submitting data */
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    using (SqlCommand command = new SqlCommand("dbo.LetsSeeif you canDelete?", connection))
+                    using (SqlCommand command = new SqlCommand("dbo.DeleteAllUsers", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 

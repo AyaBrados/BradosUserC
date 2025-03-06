@@ -1,7 +1,4 @@
-
-using UserController;
-
-namespace BaseProjectApi
+namespace UserController
 {
     public class Program
     {

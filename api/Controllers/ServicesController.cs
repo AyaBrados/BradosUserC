@@ -52,6 +52,7 @@ namespace BaseProjectApi.Controllers
                     _response = await _ius.RegisterUser(uiReq);
                     break;
                 case "UserLogin":
+                    _response = await _ius.UserLogin(uiReq);
                     break;
                 case "GetSingleUser":
                     _response = await _ius.GetSingleUser(uiReq);
@@ -60,11 +61,13 @@ namespace BaseProjectApi.Controllers
                     _response = await _ius.GetAllUsers(uiReq);
                     break;
                 case "UpdateUser":
+                    _response = await _ius.UpdateUser(uiReq);
                     break;
                 case "DeleteSingleUser":
                     _response = await _ius.DeleteSingleUser(uiReq);
                     break;
                 case "DeleteAllUsers":
+                    _response = await _ius.DeleteAllUsers(uiReq);
                     break;
                 case "DecryptUserToken":
                     _response = await _ius.DecryptUserToken(uiReq);
@@ -75,7 +78,7 @@ namespace BaseProjectApi.Controllers
 
             if (!_response.Status)
             {
-                Console.WriteLine("");
+                Console.WriteLine("Destination method not found, please try again.");
             }
 
             return Ok(_response);
